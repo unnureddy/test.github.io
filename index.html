@@ -16,6 +16,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#appointments">Appointments</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -42,35 +43,41 @@
             <div class="container">
                 <h2>Our Services</h2>
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card" data-service="Hair Cuts & Styling" data-price="85">
                         <h3>Hair Cuts & Styling</h3>
                         <p>Professional cuts and styling for all hair types</p>
                         <div class="price">Starting at $85</div>
+                        <button class="book-service-btn">Book Now</button>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-service="Hair Coloring" data-price="150">
                         <h3>Hair Coloring</h3>
                         <p>Full color, highlights, balayage, and color correction</p>
                         <div class="price">Starting at $150</div>
+                        <button class="book-service-btn">Book Now</button>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-service="Hair Treatments" data-price="95">
                         <h3>Hair Treatments</h3>
                         <p>Deep conditioning, keratin treatments, and hair repair</p>
                         <div class="price">Starting at $95</div>
+                        <button class="book-service-btn">Book Now</button>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-service="Special Occasion Styling" data-price="125">
                         <h3>Special Occasion Styling</h3>
                         <p>Bridal, prom, and event styling</p>
                         <div class="price">Starting at $125</div>
+                        <button class="book-service-btn">Book Now</button>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-service="Hair Extensions" data-price="300">
                         <h3>Hair Extensions</h3>
                         <p>Tape-in, clip-in, and permanent extensions</p>
                         <div class="price">Starting at $300</div>
+                        <button class="book-service-btn">Book Now</button>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card" data-service="Blowouts" data-price="65">
                         <h3>Blowouts</h3>
                         <p>Professional blowout and styling</p>
                         <div class="price">Starting at $65</div>
+                        <button class="book-service-btn">Book Now</button>
                     </div>
                 </div>
             </div>
@@ -132,7 +139,103 @@
                 </div>
             </div>
         </section>
+
+        <!-- Appointments Section -->
+        <section id="appointments" class="appointments">
+            <div class="container">
+                <h2>My Appointments</h2>
+                <div id="appointments-list" class="appointments-list">
+                    <p class="no-appointments">No appointments booked yet. Book your first appointment below!</p>
+                </div>
+                <div class="appointment-actions">
+                    <button id="book-general-appointment" class="cta-button">Book General Appointment</button>
+                    <button id="view-all-appointments" class="secondary-button">View All Appointments</button>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book Your Appointment</h2>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="customer-name">Full Name *</label>
+                    <input type="text" id="customer-name" name="customerName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customer-email">Email Address *</label>
+                    <input type="email" id="customer-email" name="customerEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customer-phone">Phone Number *</label>
+                    <input type="tel" id="customer-phone" name="customerPhone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="selected-service">Service *</label>
+                    <select id="selected-service" name="selectedService" required>
+                        <option value="">Select a service</option>
+                        <option value="Hair Cuts & Styling" data-price="85">Hair Cuts & Styling - $85</option>
+                        <option value="Hair Coloring" data-price="150">Hair Coloring - $150</option>
+                        <option value="Hair Treatments" data-price="95">Hair Treatments - $95</option>
+                        <option value="Special Occasion Styling" data-price="125">Special Occasion Styling - $125</option>
+                        <option value="Hair Extensions" data-price="300">Hair Extensions - $300</option>
+                        <option value="Blowouts" data-price="65">Blowouts - $65</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="appointment-date">Preferred Date *</label>
+                    <input type="date" id="appointment-date" name="appointmentDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="appointment-time">Preferred Time *</label>
+                    <select id="appointment-time" name="appointmentTime" required>
+                        <option value="">Select a time</option>
+                        <option value="09:00">9:00 AM</option>
+                        <option value="09:30">9:30 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="10:30">10:30 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="11:30">11:30 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="12:30">12:30 PM</option>
+                        <option value="13:00">1:00 PM</option>
+                        <option value="13:30">1:30 PM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="14:30">2:30 PM</option>
+                        <option value="15:00">3:00 PM</option>
+                        <option value="15:30">3:30 PM</option>
+                        <option value="16:00">4:00 PM</option>
+                        <option value="16:30">4:30 PM</option>
+                        <option value="17:00">5:00 PM</option>
+                        <option value="17:30">5:30 PM</option>
+                        <option value="18:00">6:00 PM</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="special-requests">Special Requests</label>
+                    <textarea id="special-requests" name="specialRequests" rows="3" placeholder="Any special requests or notes..."></textarea>
+                </div>
+                
+                <div class="price-display">
+                    <strong>Estimated Price: $<span id="estimated-price">0</span></strong>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="cta-button">Confirm Booking</button>
+                    <button type="button" class="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
